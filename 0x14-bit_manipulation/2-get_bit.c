@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* get_bit - gets value of bit at index in decimal
+* get_bit - gets value of bit at the index in decimal
 * @n: searched num
 * @index: index of bit
 * Return: bit value
