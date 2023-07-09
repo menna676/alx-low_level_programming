@@ -7,7 +7,7 @@
 */
 int displayHistory(info_t *info)
 {
-print_list(info->history);
+printLinkedL(info->history);
 return (0);
 }
 /**
@@ -26,7 +26,7 @@ return (1);
 n = *s;
 *s = '\0';
 ret = delete_node_at_index(&(info->alias),
-get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
+getIndexofNode(info->alias, NodewithPrefix(info->alias, str, -1)));
 *s = n;
 return (ret);
 }
@@ -95,7 +95,7 @@ s = _strchr(info->argv[i], '=');
 if (s)
 set_shellAlias(info, info->argv[i]);
 else
-print_shellAlias(node_starts_with(info->alias, info->argv[i], '='));
+print_shellAlias(NodewithPrefix(info->alias, info->argv[i], '='));
 i++;
 }
 return (0);

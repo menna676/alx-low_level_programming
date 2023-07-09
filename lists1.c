@@ -25,7 +25,6 @@ list_t *Node = head;
 size_t i = getList_leng(head), j;
 char **strings;
 char *str;
-size_t i = 0, j;
 if (!head || !i)
 return (NULL);
 strings = malloc(sizeof(char *) * (i + 1));

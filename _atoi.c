@@ -40,21 +40,21 @@ return (0);
 */
 int stringtoint(char *p)
 {
-int i = 0, sign = 1, flag = 0, output;
+int i = 0, sign = 1, f = 0, output;
 unsigned int result = 0;
-while (p[i] != '\0' && flag != 2)
+while (p[i] != '\0' && f != 2)
 {
 if (p[i] == '-')
 sign *= -1;
 if (p[i] >= '0' && p[i] <= '9')
 {
-flag = 1;
+f = 1;
 result *= 10;
 result += (p[i] - '0');
 }
-else if (flag == 1)
+else if (f == 1)
 {
-flag = 2;
+f = 2;
 }
 i++;
 }

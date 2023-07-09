@@ -111,4 +111,14 @@ int set_shellAlias(info_t *info, char *str);
 int print_shellAlias(list_t *node);
 int shellAlias(info_t *info);
 
+size_t getList_leng(const list_t *);
+char **LLtoStrings(list_t *);
+size_t printLinkedL(const list_t *);
+list_t *NodewithPrefix(list_t *, char *, char);
+ssize_t getIndexofNode(list_t *, list_t *);
+
+int My_Exit(info_t *);
+int MyCD(info_t *);
+int MyHelp(info_t *);
+
 #endif
