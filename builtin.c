@@ -14,8 +14,8 @@ if (exit_status == -1)
 {
 info->status = 2;
 print_error(info, "Invalid number: ");
-_eputs(info->argv[1]);
-_eputchar('\n');
+errorprints(info->argv[1]);
+errorprintchar('\n');
 return (1);
 }
 info->err_num = _erratoi(info->argv[1]);
@@ -38,36 +38,36 @@ if (!p)
 _puts(" TODO: >>getcwd failed emsg here<<\n");
 if (!info->argv[1])
 {
-dirc = _getenv(info, "HOME=");
+dirc = getenvironment(info, "HOME=");
 if (!dirc)
 chdir_ret = /* TODO: what should this be? */
-chdir((dirc = _getenv(info, "PWD=")) ? dirc : "/");
+chdir((dirc = getenvironment(info, "PWD=")) ? dirc : "/");
 else
 chdir_ret = chdir(dirc);
 }
 else if (_strcmp(info->argv[1], "-") == 0)
 {
-if (!_getenv(info, "OLDPWD="))
+if (!getenvironment(info, "OLDPWD="))
 {
 _puts(p);
 _putchar('\n');
 return (1);
 }
-_puts(_getenv(info, "OLDPWD="));
+_puts(getenvironment(info, "OLDPWD="));
 _putchar('\n');
 chdir_ret = /* TODO: what should this be? */
-chdir((dirc = _getenv(info, "OLDPWD=")) ? dirc : "/");
+chdir((dirc = getenvironment(info, "OLDPWD=")) ? dirc : "/");
 }
 else
 chdir_ret = chdir(info->argv[1]);
 if (chdir_ret == -1)
 {
 print_error(info, "can not cd to ");
-_eputs(info->argv[1]), _eputchar('\n');
+errorprints(info->argv[1]), errorprintchar('\n');
 }
 else
 {
-_setenv(info, "OLDPWD", _getenv(info, "PWD="));
+_setenv(info, "OLDPWD", getenvironment(info, "PWD="));
 _setenv(info, "PWD", getcwd(buffer, 1024));
 }
 return (0);

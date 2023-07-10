@@ -11,23 +11,23 @@
 #include <sys/types.h>
 #include <limits.h>
 
-#define Convert_lowercase     1
-#define Convert_unsigned      2
+#define Change_lowercase     1
+#define Change_unsigned      2
 
 #define Read_Buff_size  1024
 #define Write_Buff_size 1024
 #define Buff_flush      -1
 
-#define Use_Getline 0
-#define Use_strtok  0
+#define Use_Getli    0
+#define Use_strtokk  0
 
-#define CMD_norm      0
-#define CMD_or        1
-#define CMD_and       2
-#define CMD_chain     3
+#define CMD_norms     0
+#define CMD_ors       1
+#define CMD_ands      2
+#define CMD_chains    3
 
-#define Hist_File    ".simple_shell_history"
-#define Hist_Max     4096
+#define Hist_Fi    ".simple_shell_history"
+#define Hist_Maxim     4096
 
 extern char **environ;
 
@@ -120,5 +120,16 @@ ssize_t getIndexofNode(list_t *, list_t *);
 int My_Exit(info_t *);
 int MyCD(info_t *);
 int MyHelp(info_t *);
+
+int Myenvironment(info_t *);
+char *getenvironment(info_t *, const char *);
+int setenvironment(info_t *);
+int unsetenvironment(info_t *);
+int populateenvironL(info_t *);
+
+void errorprints(char *);
+int errorprintchar(char);
+int printfd(char n, int fid);
+int printfds(char *str, int fid);
 
 #endif
