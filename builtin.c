@@ -9,16 +9,16 @@ int My_Exit(info_t *info)
 int exit_status;
 if (info->argv[1])
 {
-exit_status = _erroratoi(info->argv[1]);
+exit_status = errorstringtoint(info->argv[1]);
 if (exit_status == -1)
 {
 info->status = 2;
-print_error(info, "Invalid number: ");
+printerrormes(info, "Invalid number: ");
 errorprints(info->argv[1]);
 errorprintchar('\n');
 return (1);
 }
-info->err_num = _erratoi(info->argv[1]);
+info->err_num = errorstringtoint(info->argv[1]);
 return (-2);
 }
 info->err_num = -1;
@@ -62,7 +62,7 @@ else
 chdir_ret = chdir(info->argv[1]);
 if (chdir_ret == -1)
 {
-print_error(info, "can not cd to ");
+printerrormes(info, "can not cd to ");
 errorprints(info->argv[1]), errorprintchar('\n');
 }
 else

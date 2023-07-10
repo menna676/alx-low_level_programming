@@ -59,7 +59,7 @@ size_t printLinkedL(const list_t *head)
 size_t i;
 for (i = 0; head; head = head->next, i++)
 {
-_puts(convert_number(head->numb, 10, 0));
+_puts(Turnnumb(head->numb, 10, 0));
 _putchar(':');
 _putchar(' ');
 _puts(head->str ? head->str : "(nil)");

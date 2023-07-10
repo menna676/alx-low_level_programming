@@ -12,7 +12,7 @@
 #include <limits.h>
 
 #define Change_lowercase     1
-#define Change_unsigned      2
+#define Change_UnSigned      2
 
 #define Read_Buff_size  1024
 #define Write_Buff_size 1024
@@ -131,5 +131,15 @@ void errorprints(char *);
 int errorprintchar(char);
 int printfd(char n, int fid);
 int printfds(char *str, int fid);
+
+int errorstringtoint(char *);
+void printerrormes(info_t *, char *);
+int printintfd(int, int);
+char *Turnnumb(long int, int, int);
+void remcom(char *);
+
+void clearnfstruct(info_t *);
+void initializenfstruct(info_t *, char **);
+void freenfstruct(info_t *, int);
 
 #endif
