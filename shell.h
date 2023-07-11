@@ -142,4 +142,8 @@ void clearnfstruct(info_t *);
 void initializenfstruct(info_t *, char **);
 void freenfstruct(info_t *, int);
 
+char *StringCopy(char *, char *, int);
+char *StringConcat(char *, char *, int);
+char *StringCharac(char *, char);
+
 #endif

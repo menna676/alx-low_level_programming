@@ -20,7 +20,7 @@ int Remove_alias(info_t *info, char *str)
 {
 char *s, n;
 int ret;
-s = _strchr(str, '=');
+s = StringCharac(str, '=');
 if (!s)
 return (1);
 n = *s;
@@ -39,7 +39,7 @@ return (ret);
 int set_shellAlias(info_t *info, char *str)
 {
 char *s;
-s = _strchr(str, '=');
+s = StringCharac(str, '=');
 if (!s)
 return (1);
 if (!*++s)
@@ -58,7 +58,7 @@ char *s = NULL;
 char *al = NULL;
 if (Node)
 {
-s = _strchr(Node->str, '=');
+s = StringCharac(Node->str, '=');
 for (al = Node->str; al <= s; al++)
 _putchar(*al);
 _putchar('\'');
@@ -91,7 +91,7 @@ return (0);
 i = 1;
 while (info->argv[i])
 {
-s = _strchr(info->argv[i], '=');
+s = StringCharac(info->argv[i], '=');
 if (s)
 set_shellAlias(info, info->argv[i]);
 else
